@@ -19,8 +19,12 @@ sendPing;
   pingServer = function(url) {
     var urlToPing = url;
     setTimeout(function(){
-    console.log('PINGING ' + urlToPing + ' ' + new Date().toString());
-      sendPing(urlToPing);
+      var date = new Date(),
+          hours = date.getHours();
+      if(hours >= 7 && hours <= 24) {
+        console.log('PINGING ' + urlToPing + ' ' + date.toString());
+        sendPing(urlToPing);
+      }
     }, config.pingFrequency);
   };
 
