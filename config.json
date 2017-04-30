@@ -1,7 +1,7 @@
 {
   "pingFrequency" : 900000,
   "urlsToPing" : [
-  	"http://tonftp.herokuapp.com"
+  	"https://tonftp.herokuapp.com"
   ],
-  "pingServerUrl" : "http://tonftpalive.herokuapp.com"
+  "pingServerUrl" : "https://tonftpalive.herokuapp.com"
 }
