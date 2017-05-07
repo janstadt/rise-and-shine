@@ -5,10 +5,8 @@ app = express(),
 pingServer,
 sendPing;
 
-  app.configure(function() {
-    app.use(express.bodyParser());
-  });
-
+  app.use(express.bodyParser());
+  
   sendPing = function(url) {
     request.get(url, function() {
       console.log('RESPONSE FROM: ' + url);
