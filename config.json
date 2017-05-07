@@ -1,5 +1,5 @@
 {
-  "pingFrequency" : 900000,
+  "pingFrequency" : 60,
   "urlsToPing" : [
   	"https://tonftp.herokuapp.com"
   ],
