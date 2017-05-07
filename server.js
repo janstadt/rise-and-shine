@@ -6,9 +6,10 @@ app = express(),
 pingServer,
 sendPing;
 
-  app.use(bodyParser.text({ type: 'text/html' }))
+  app.use(bodyParser.text({ type: 'text/html' }));
   
   sendPing = function(url) {
+    console.log("entering sendPing");
     request.get(url, function() {
       console.log('RESPONSE FROM: ' + url);
       pingServer(url);
@@ -17,7 +18,9 @@ sendPing;
 
   pingServer = function(url) {
     var urlToPing = url;
+    console.log("entering pingServer");
     setTimeout(function(){
+      console.log("entering timeout");
       var date = new Date(),
           hours = date.getHours();
       if(hours >= 7 && hours <= 24) {
@@ -32,8 +35,7 @@ sendPing;
     pingServer(url);
   }
 
-  pingServer(config.pingServerUrl);
-
 var port = process.env.PORT || 3000;
 var server = app.listen(port);
 console.log("*****Server running on port " + port);
+pingServer(config.pingServerUrl);
