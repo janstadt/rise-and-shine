@@ -17,14 +17,14 @@ sendPing;
 
   pingServer = function(url) {
     var urlToPing = url;
-    //setTimeout(function(){
+    setTimeout(function(){
       var date = new Date(),
           hours = date.getHours();
       if(hours >= 7 && hours <= 24) {
         console.log('PINGING ' + urlToPing + ' ' + date.toString());
         sendPing(urlToPing);
       }
-    //}, config.pingFrequency);
+    }, config.pingFrequency);
   };
 
   for(var i=0; i < config.urlsToPing.length; i++) {
