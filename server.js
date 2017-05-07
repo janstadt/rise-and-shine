@@ -1,11 +1,12 @@
 var  request = require('request'),
 express = require("express"),
 config = require('./config'),
+bodyParser = require('body-parser'),
 app = express(),
 pingServer,
 sendPing;
 
-  app.use(express.bodyParser());
+  app.use(bodyParser.text({ type: 'text/html' }))
   
   sendPing = function(url) {
     request.get(url, function() {
