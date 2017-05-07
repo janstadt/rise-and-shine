@@ -4,6 +4,7 @@
   "description": "Simple app to ping heroku server to keep it alive.",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.15.0",
     "request": "2.34.0"
   },
   "scripts": {
