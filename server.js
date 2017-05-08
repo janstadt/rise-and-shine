@@ -9,7 +9,7 @@ sendPing;
   app.use(bodyParser.text({ type: 'text/html' }));
   
   sendPing = function(url) {
-    console.log("entering sendPing");
+    //console.log("entering sendPing");
     request.get(url, function() {
       console.log('RESPONSE FROM: ' + url);
       pingServer(url);
@@ -18,9 +18,9 @@ sendPing;
 
   pingServer = function(url) {
     var urlToPing = url;
-    console.log("entering pingServer");
+    //console.log("entering pingServer");
     setTimeout(function(){
-      console.log("entering timeout");
+      //console.log("entering timeout");
       var date = new Date(),
           hours = date.getHours();
       if(hours >= 7 && hours <= 24) {
